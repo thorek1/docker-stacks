@@ -60,11 +60,11 @@ RUN conda install --quiet --yes \
     #'r-htmlwidgets' \
     'r-irkernel' \
     #'r-nycflights13' \
-    #'r-rio' \
+    'r-rio' \
     #'r-randomforest' \
     #'r-rcurl' \
     #'r-reshape2' \
-    #'r-rmarkdown' \
+    'r-rmarkdown' \
     #'r-rsqlite' \
     #'rpy2' \
     'r-tidyverse' \
