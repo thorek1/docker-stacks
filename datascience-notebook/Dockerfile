@@ -67,7 +67,7 @@ RUN conda install --quiet --yes \
     #'r-rmarkdown' \
     #'r-rsqlite' \
     #'rpy2' \
-    #'r-tidy verse' \
+    'r-tidyverse' \
     'r-shiny' -y \
     && \
     conda clean --all -f -y && \
@@ -85,9 +85,9 @@ RUN julia -e "using Pkg; Pkg.add(url = "https://github.com/JuliaComputing/MKL.jl
     julia -e 'import Pkg; Pkg.update()' && \
     (test $TEST_ONLY_BUILD || julia -e 'import Pkg; Pkg.add("HDF5")') && \
     julia -e "using Pkg; pkg\"add IJulia\"; pkg\"precompile\"" && \
-    julia -e 'import Pkg; Pkg.add("Plots")') && \
-    julia -e 'import Pkg; Pkg.add("PyPlot")') && \
-    julia -e 'import Pkg; Pkg.add("Sympy")') && \
+    julia -e 'import Pkg; Pkg.add("Plots")' && \
+    julia -e 'import Pkg; Pkg.add("PyPlot")' && \
+    julia -e 'import Pkg; Pkg.add("Sympy")' && \
     # move kernelspec out of home \
     mv "${HOME}/.local/share/jupyter/kernels/julia"* "${CONDA_DIR}/share/jupyter/kernels/" && \
     chmod -R go+rx "${CONDA_DIR}/share/jupyter" && \
