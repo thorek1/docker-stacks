@@ -49,7 +49,7 @@ RUN mkdir /etc/julia && \
 USER $NB_UID
 
 # R packages including IRKernel which gets installed globally.
-RUN conda install --quiet --yes \
+RUN conda create -n renv \
     'r-base=4.0.2' \
     'r-caret' \
     'r-crayon' \
@@ -68,7 +68,7 @@ RUN conda install --quiet --yes \
     'r-rsqlite' \
     'r-shiny' \
     'r-tidyverse' \
-    'rpy2' \
+    'rpy2' -y \
     && \
     conda clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
