@@ -53,21 +53,21 @@ RUN conda install --quiet --yes \
     'r-base=4.0.2' \
     #'r-caret' \
     #'r-crayon' \
-    'r-devtools' \
+    #'r-devtools' \
     #'r-forecast' \
     #'r-hexbin' \
     #'r-htmltools' \
     #'r-htmlwidgets' \
     'r-irkernel' \
     #'r-nycflights13' \
-    'r-rio' \
+    #'r-rio' \
     #'r-randomforest' \
     #'r-rcurl' \
     #'r-reshape2' \
     'r-rmarkdown' \
     #'r-rsqlite' \
     'r-shiny' \
-    'r-tidyverse' \
+    #'r-tidyverse' \
     'rpy2' -y \
     && \
     conda clean --all -f -y && \
