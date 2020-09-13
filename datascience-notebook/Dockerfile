@@ -53,7 +53,7 @@ RUN conda install --quiet --yes \
     'r-base=4.0.2' \
     #'r-caret' \
     #'r-crayon' \
-    #'r-devtools' \
+    'r-devtools' \
     #'r-forecast' \
     #'r-hexbin' \
     #'r-htmltools' \
@@ -85,7 +85,7 @@ RUN julia -e 'using Pkg; Pkg.add(url = "https://github.com/JuliaComputing/MKL.jl
 RUN julia -e 'import Pkg; Pkg.update()' && \
     (test $TEST_ONLY_BUILD || julia -e 'import Pkg; Pkg.add("HDF5")') && \
     julia -e "using Pkg; pkg\"add IJulia\"; pkg\"precompile\""
-RUN julia -e 'import Pkg; Pkg.add("Plots")' #&& \
+RUN julia -e 'import Pkg; Pkg.add("Plots"); using Plots' #&& \
   #  julia -e 'import Pkg; Pkg.add("PyPlot")' && \
   #  julia -e 'import Pkg; Pkg.add("Sympy")'
     # move kernelspec out of home \
