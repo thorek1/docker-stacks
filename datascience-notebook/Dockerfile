@@ -64,11 +64,11 @@ RUN conda install --quiet --yes \
     #'r-randomforest' \
     #'r-rcurl' \
     #'r-reshape2' \
-    'r-rmarkdown' \
+    #'r-rmarkdown' \
     #'r-rsqlite' \
-    'r-shiny' \
-    #'r-tidyverse' \
-    'rpy2' -y \
+    #'rpy2' \
+    #'r-tidy verse' \
+    'r-shiny' -y \
     && \
     conda clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
