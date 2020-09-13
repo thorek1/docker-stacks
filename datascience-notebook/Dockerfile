@@ -49,23 +49,23 @@ RUN mkdir /etc/julia && \
 USER $NB_UID
 
 # R packages including IRKernel which gets installed globally.
-RUN conda create -n renv \
+RUN conda install --quiet --yes \
     'r-base=4.0.2' \
-    'r-caret' \
-    'r-crayon' \
+    #'r-caret' \
+    #'r-crayon' \
     'r-devtools' \
-    'r-forecast' \
-    'r-hexbin' \
-    'r-htmltools' \
-    'r-htmlwidgets' \
+    #'r-forecast' \
+    #'r-hexbin' \
+    #'r-htmltools' \
+    #'r-htmlwidgets' \
     'r-irkernel' \
-    'r-nycflights13' \
-    'r-plyr' \
-    'r-randomforest' \
-    'r-rcurl' \
-    'r-reshape2' \
+    #'r-nycflights13' \
+    'r-rio' \
+    #'r-randomforest' \
+    #'r-rcurl' \
+    #'r-reshape2' \
     'r-rmarkdown' \
-    'r-rsqlite' \
+    #'r-rsqlite' \
     'r-shiny' \
     'r-tidyverse' \
     'rpy2' -y \
