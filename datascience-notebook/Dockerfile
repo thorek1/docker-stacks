@@ -85,9 +85,9 @@ RUN julia -e 'using Pkg; Pkg.add(url = "https://github.com/JuliaComputing/MKL.jl
 RUN julia -e 'import Pkg; Pkg.update()' && \
     (test $TEST_ONLY_BUILD || julia -e 'import Pkg; Pkg.add("HDF5")') && \
     julia -e "using Pkg; pkg\"add IJulia\"; pkg\"precompile\""
-RUN julia -e 'import Pkg; Pkg.add("Plots")' && \
-    julia -e 'import Pkg; Pkg.add("PyPlot")' && \
-    julia -e 'import Pkg; Pkg.add("Sympy")'
+RUN julia -e 'import Pkg; Pkg.add("Plots")' #&& \
+  #  julia -e 'import Pkg; Pkg.add("PyPlot")' && \
+  #  julia -e 'import Pkg; Pkg.add("Sympy")'
     # move kernelspec out of home \
 RUN mv "${HOME}/.local/share/jupyter/kernels/julia"* "${CONDA_DIR}/share/jupyter/kernels/" && \
     chmod -R go+rx "${CONDA_DIR}/share/jupyter" && \
